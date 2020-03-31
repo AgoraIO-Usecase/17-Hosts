@@ -1,0 +1,45 @@
+parameters:
+  displayName: ''
+  workingDirectory: ''
+  scheme: ''
+  sdkurl: ''
+
+jobs:
+  - job: ${{ parameters.displayName }}Build
+    displayName: ${{ parameters.displayName }}
+
+    pool:
+      vmImage: 'macOS-10.14'
+
+    variables:
+      - group: AgoraKeys
+
+    steps:
+      - script: cd 'cicd/scripts' && chmod +x sdkdownload.sh && ./sdkdownload.sh ${{ parameters.sdkurl }} ${{ parameters.workingDirectory }}/${{ parameters.scheme }}
+    
+      - script: cd 'cicd/scripts' && ls && python keycenter.py && ls
+        env:
+          AGORA_APP_ID: $(agora.appId)
+          File_Directory: '../../${{ parameters.workingDirectory }}/${{ parameters.scheme }}'
+            
+      - task: InstallAppleCertificate@2
+        inputs:
+          certSecureFile: 'certificate.p12'
+          certPwd: $(agora.password)
+
+      - task: InstallAppleProvisioningProfile@1
+        inputs:
+          provProfileSecureFile: 'AgoraAppsDevProfile.mobileprovision'
+
+      - script: cd 'cicd/scripts' && chmod +x ios_build.sh && ./ios_build.sh ../../${{ parameters.workingDirectory }} ${{ parameters.scheme }}
+
+      - script: cd '${{ parameters.workingDirectory }}' && mkdir app && mv *.ipa app && mv *.xcarchive app
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: ${{ parameters.workingDirectory }}/app
+          ArtifactName: ${{ parameters.displayName }}
+
+      - template: github-release.yml
+        parameters:
+          displayName: ${{ parameters.displayName }}

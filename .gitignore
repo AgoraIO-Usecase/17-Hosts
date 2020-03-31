@@ -1,3 +1,5 @@
 *.framework
 .vscode
 .DS_Store
+
+agora_sdk
