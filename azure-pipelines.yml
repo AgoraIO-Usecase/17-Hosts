@@ -16,7 +16,7 @@ variables:
 
 jobs:
 
-- template: iOS&macOS/build-template/build-ios.yml
+- template: cicd/build-template/build-ios.yml
   parameters:
     displayName: '17MultistreamiOS'
     workingDirectory: '17-Multistream-iOS'
