@@ -16,6 +16,8 @@
 		0F240F821F7FA72C001B0AC6 /* VideoSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F240F811F7FA72C001B0AC6 /* VideoSessionView.swift */; };
 		0F7ED6B61F7FA7A000B5329E /* VideoSessionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7ED6B51F7FA7A000B5329E /* VideoSessionView.xib */; };
 		384C9A942179792100921076 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 384C9A932179792100921076 /* README.md */; };
+		A757CAD3243308ED007AAB8E /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757CAD2243308ED007AAB8E /* KeyCenter.swift */; };
+		A757CAD5243308FB007AAB8E /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A757CAD4243308FB007AAB8E /* AgoraRtcKit.framework */; };
 		A773BC952408BCD2003ECBFD /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F80CD3A217867D900131A5E /* Accelerate.framework */; };
 		A773BC972408BCDA003ECBFD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BC962408BCDA003ECBFD /* AudioToolbox.framework */; };
 		A773BC982408BCE1003ECBFD /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384C9A9B21797A6500921076 /* VideoToolbox.framework */; };
@@ -27,8 +29,6 @@
 		A773BCA12408BD05003ECBFD /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0745273C1E9E050C0054D2D4 /* libresolv.tbd */; };
 		A773BCA22408BD0C003ECBFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384C9A9921797A5D00921076 /* SystemConfiguration.framework */; };
 		A773BCA32408BD7E003ECBFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384C9A9721797A5700921076 /* CoreTelephony.framework */; };
-		A79A7DD323B1E08600335021 /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7DD223B1E08600335021 /* KeyCenter.swift */; };
-		A79A7DF923B1E65200335021 /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79A7DF723B1E64400335021 /* AgoraRtcKit.framework */; };
 		D505C60A26A6C7379BF2AFA2 /* Pods_17_Multistream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8143D2CDDB7B483556178C5A /* Pods_17_Multistream.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,12 +53,12 @@
 		384C9A9B21797A6500921076 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		384C9A9D21797A7800921076 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		8143D2CDDB7B483556178C5A /* Pods_17_Multistream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_17_Multistream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A757CAD2243308ED007AAB8E /* KeyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
+		A757CAD4243308FB007AAB8E /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcKit.framework; sourceTree = "<group>"; };
 		A773BC962408BCDA003ECBFD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A773BC992408BCEA003ECBFD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A773BC9C2408BCF7003ECBFD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A773BC9D2408BCF7003ECBFD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		A79A7DD223B1E08600335021 /* KeyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyCenter.swift; path = ../../shared/Swift/KeyCenter.swift; sourceTree = "<group>"; };
-		A79A7DF723B1E64400335021 /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcKit.framework; path = ../../libs/iOS/AgoraRtcKit.framework; sourceTree = "<group>"; };
 		A7FE1CC923960A3400DF14A9 /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcKit.framework; path = ../libs/AgoraRtcKit.framework; sourceTree = "<group>"; };
 		F2338A7A69609C5C9E0DA97B /* Pods-17-Multistream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-17-Multistream.release.xcconfig"; path = "Target Support Files/Pods-17-Multistream/Pods-17-Multistream.release.xcconfig"; sourceTree = "<group>"; };
 		FAECCE24369E2D968415FD26 /* Pods-17-Multistream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-17-Multistream.debug.xcconfig"; path = "Target Support Files/Pods-17-Multistream/Pods-17-Multistream.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,11 +70,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A773BC9E2408BCF7003ECBFD /* CoreMedia.framework in Frameworks */,
+				A757CAD5243308FB007AAB8E /* AgoraRtcKit.framework in Frameworks */,
 				A773BC9F2408BCF7003ECBFD /* CoreMotion.framework in Frameworks */,
 				A773BC952408BCD2003ECBFD /* Accelerate.framework in Frameworks */,
 				A773BCA12408BD05003ECBFD /* libresolv.tbd in Frameworks */,
 				A773BC9B2408BCF7003ECBFD /* CoreML.framework in Frameworks */,
-				A79A7DF923B1E65200335021 /* AgoraRtcKit.framework in Frameworks */,
 				A773BC9A2408BCEA003ECBFD /* AVFoundation.framework in Frameworks */,
 				A773BCA02408BCFD003ECBFD /* libc++.tbd in Frameworks */,
 				A773BCA32408BD7E003ECBFD /* CoreTelephony.framework in Frameworks */,
@@ -133,12 +133,12 @@
 			children = (
 				078012EE1D1E57730093DE24 /* MainViewController.swift */,
 				0790F1271D1E645B003F8C18 /* LiveRoomViewController.swift */,
-				A79A7DD223B1E08600335021 /* KeyCenter.swift */,
 				0F240F811F7FA72C001B0AC6 /* VideoSessionView.swift */,
+				A757CAD2243308ED007AAB8E /* KeyCenter.swift */,
 				0F7ED6B51F7FA7A000B5329E /* VideoSessionView.xib */,
 				078012F01D1E57730093DE24 /* Main.storyboard */,
 				A70E3D3D239F488600B7F68C /* Supporting Files */,
-				A79A7DF723B1E64400335021 /* AgoraRtcKit.framework */,
+				A757CAD4243308FB007AAB8E /* AgoraRtcKit.framework */,
 			);
 			path = "17-Multistream";
 			sourceTree = "<group>";
@@ -289,10 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A757CAD3243308ED007AAB8E /* KeyCenter.swift in Sources */,
 				078012EF1D1E57730093DE24 /* MainViewController.swift in Sources */,
 				078012ED1D1E57730093DE24 /* AppDelegate.swift in Sources */,
 				0790F1281D1E645B003F8C18 /* LiveRoomViewController.swift in Sources */,
-				A79A7DD323B1E08600335021 /* KeyCenter.swift in Sources */,
 				0F240F821F7FA72C001B0AC6 /* VideoSessionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,13 +440,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/17-Multistream/",
-					"$(PROJECT_DIR)/../libs/iOS",
+					"$(PROJECT_DIR)/17-Multistream",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/17-Multistream/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = io.agora.LargeGroupVideoChat;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.17-Multistream";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = AgoraAppsDevProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -470,13 +470,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/17-Multistream/",
-					"$(PROJECT_DIR)/../libs/iOS",
+					"$(PROJECT_DIR)/17-Multistream",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/17-Multistream/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = io.agora.LargeGroupVideoChat;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.17-Multistream";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = AgoraAppsDevProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
