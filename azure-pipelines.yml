@@ -18,7 +18,7 @@ jobs:
 
 - template: cicd/build-template/build-ios.yml
   parameters:
-    displayName: '17MultistreamiOS'
+    displayName: 'MultistreamiOS'
     workingDirectory: '17-Multistream-iOS'
     scheme: '17-Multistream'
     sdkurl: $(iOSRTCSDK)
