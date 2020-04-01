@@ -31,7 +31,7 @@ jobs:
     sdkurl: $(MacRTCSDK)
 - template: cicd/build-template/build-Windows.yml
   parameters:
-    displayName: '17MultiStreamWindows'
+    displayName: 'MultiStreamWindows17'
     workingDirectory: '17-Multistream-Windows'
     scheme: '17-Multistream'
     sdkurl: $(WindowsRTCSDK)
