@@ -25,7 +25,7 @@ jobs:
    
     steps:
       - script: echo "${{ parameters.sdkurl }}"
-      - powershell: 17-Hosts/cicd/script/downloadsdk.ps1 "${{ parameters.sdkurl }}"
+      - powershell: cicd/scripts/downloadsdk.ps1 "${{ parameters.sdkurl }}"
    
       - task: ExtractFiles@1
         inputs:

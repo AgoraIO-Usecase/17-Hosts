@@ -31,9 +31,9 @@ jobs:
     sdkurl: $(MacRTCSDK)
 - template: cicd/build-template/build-Windows.yml
   parameters:
-    displayName: '17MultiStreamWindows'
+    displayName: 'MultiStreamWindows17'
     workingDirectory: '17-Multistream-Windows'
-    scheme: '17-Multistream-Windows'
+    scheme: '17-Multistream'
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraOpenLive.sln'
     sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
