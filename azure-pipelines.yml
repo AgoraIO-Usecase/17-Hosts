@@ -8,7 +8,6 @@ trigger:
 - dev/*
 
 jobs:
-
   - template: cicd/build-template/build-web.yml
     parameters:
       displayName: 'MultistreamWeb'
