@@ -1,0 +1,35 @@
+parameters:
+  displayName: ''
+  workingDirectory: ''
+
+jobs:
+  - job: ${{ parameters.displayName }}Build
+    displayName: ${{ parameters.displayName }}
+
+    pool:
+      vmImage: 'ubuntu-16.04'
+
+    variables:
+      - group: AgoraKeys
+
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '12.16.x'
+          displayName: 'Install Node.js 12.16.x'
+    
+      - script: cd '${{ parameters.workingDirectory }}'
+            npm install
+            npm run build
+        displayName: 'npm install and build'
+        env:
+          AGORA_APP_ID: $(agora.appId)
+
+      # - task: PublishBuildArtifacts@1
+      #   inputs:
+      #     PathtoPublish: ${{ parameters.workingDirectory }}/app
+      #     ArtifactName: ${{ parameters.displayName }}
+
+      - template: github-release.yml
+        parameters:
+          displayName: ${{ parameters.displayName }}
