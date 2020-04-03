@@ -9,21 +9,7 @@ trigger:
 
 jobs:
 
-# - template: cicd/build-template/build-ios.yml
-#   parameters:
-#     displayName: 'MultistreamiOS'
-#     workingDirectory: '17-Multistream-iOS'
-#     scheme: '17-Multistream'
-#     sdkurl: $(iOSRTCSDK)
-
-# - template: cicd/build-template/build-mac.yml
-#   parameters:
-#     displayName: 'MultistreamMac'
-#     workingDirectory: '17-Multistream-macOS'
-#     scheme: '17-Multistream'
-#     sdkurl: $(MacRTCSDK)
-
-- template: cicd/build-template/build-web.yml
-  parameters:
-    displayName: 'MultistreamWeb'
-    workingDirectory: '17-Multistream-Web'
+  - template: cicd/build-template/build-web.yml
+    parameters:
+      displayName: 'MultistreamWeb'
+      workingDirectory: '17-Multistream-Web'
