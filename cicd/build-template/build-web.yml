@@ -32,27 +32,27 @@ jobs:
           PathtoPublish: ${{ parameters.workingDirectory }}/app
           ArtifactName: ${{ parameters.displayName }}
 
-      - task: CopyFilesOverSSH@0
-        inputs:
-          sshEndpoint: 'webdemo_1'
-          sourceFolder: ${{ parameters.workingDirectory }}/app
-          contents: '**'
-          targetFolder: ${{ parameters.deployDirectory }}
-          readyTimeout: '60000'
-          failOnEmptySource: true
-          overwrite: true
-        timeoutInMinutes: 2
+      # - task: CopyFilesOverSSH@0
+      #   inputs:
+      #     sshEndpoint: 'webdemo_1'
+      #     sourceFolder: ${{ parameters.workingDirectory }}/app
+      #     contents: '**'
+      #     targetFolder: ${{ parameters.deployDirectory }}
+      #     readyTimeout: '60000'
+      #     failOnEmptySource: true
+      #     overwrite: true
+      #   timeoutInMinutes: 2
 
-      - task: CopyFilesOverSSH@0
-        inputs:
-          sshEndpoint: 'webdemo_2'
-          sourceFolder: ${{ parameters.workingDirectory }}/app
-          contents: '**'
-          targetFolder: ${{ parameters.deployDirectory }}
-          readyTimeout: '60000'
-          failOnEmptySource: true
-          overwrite: true
-        timeoutInMinutes: 2
+      # - task: CopyFilesOverSSH@0
+      #   inputs:
+      #     sshEndpoint: 'webdemo_2'
+      #     sourceFolder: ${{ parameters.workingDirectory }}/app
+      #     contents: '**'
+      #     targetFolder: ${{ parameters.deployDirectory }}
+      #     readyTimeout: '60000'
+      #     failOnEmptySource: true
+      #     overwrite: true
+      #   timeoutInMinutes: 2
 
       - template: github-release.yml
         parameters:
