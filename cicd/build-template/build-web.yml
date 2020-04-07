@@ -1,0 +1,59 @@
+parameters:
+  displayName: ''
+  workingDirectory: ''
+  deployDirectory: '$(agora.showcaseFolder)/examples/17-Hosts'
+
+jobs:
+  - job: ${{ parameters.displayName }}Build
+    displayName: ${{ parameters.displayName }}
+
+    pool:
+      vmImage: 'ubuntu-16.04'
+
+    variables:
+      - group: AgoraKeys
+
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '12.16.x'
+          displayName: 'Install Node.js 12.16.x'
+    
+      - script: cd '${{ parameters.workingDirectory }}';
+            npm install;
+            npm run build;
+            mv build app;
+        displayName: 'npm install and build'
+        env:
+          REACT_APP_AGORA_APP_ID: $(agora.appId)
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: ${{ parameters.workingDirectory }}/app
+          ArtifactName: ${{ parameters.displayName }}
+
+      - task: CopyFilesOverSSH@0
+        inputs:
+          sshEndpoint: 'webdemo_1'
+          sourceFolder: ${{ parameters.workingDirectory }}/app
+          contents: '**'
+          targetFolder: ${{ parameters.deployDirectory }}
+          readyTimeout: '60000'
+          failOnEmptySource: true
+          overwrite: true
+        timeoutInMinutes: 2
+
+      - task: CopyFilesOverSSH@0
+        inputs:
+          sshEndpoint: 'webdemo_2'
+          sourceFolder: ${{ parameters.workingDirectory }}/app
+          contents: '**'
+          targetFolder: ${{ parameters.deployDirectory }}
+          readyTimeout: '60000'
+          failOnEmptySource: true
+          overwrite: true
+        timeoutInMinutes: 2
+
+      - template: github-release.yml
+        parameters:
+          displayName: ${{ parameters.displayName }}
