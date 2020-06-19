@@ -110,8 +110,6 @@ private extension LiveRoomViewController {
         rtcEngine.setLocalPublishFallbackOption(.audioOnly)
         rtcEngine.setRemoteSubscribeFallbackOption(.audioOnly)
         
-        #warning("no need")
-        rtcEngine.muteAllRemoteAudioStreams(true)
         rtcEngine.enableWebSdkInteroperability(true)
         
         rtcEngine.startPreview()
@@ -199,6 +197,8 @@ extension LiveRoomViewController: AgoraRtcEngineDelegate {
             let deletedSession = videoSessions.remove(at: indexToDelete)
             deletedSession.removeFromSuperview()
             deletedSession.canvas.view = nil
+            
+            rtcEngine.setupRemoteVideo(deletedSession.canvas)
         }
     }
     
