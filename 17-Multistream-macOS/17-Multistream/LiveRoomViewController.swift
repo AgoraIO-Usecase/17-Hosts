@@ -195,6 +195,8 @@ extension LiveRoomViewController: AgoraRtcEngineDelegate {
             let deletedSession = videoSessions.remove(at: indexToDelete)
             deletedSession.hostingView.removeFromSuperview()
             deletedSession.canvas.view = nil
+            
+            rtcEngine.setupRemoteVideo(deletedSession.canvas)
         }
     }
 }
